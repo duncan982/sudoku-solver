@@ -10,7 +10,7 @@ class SudokuSolver {
       !/\./g.test(puzzleString) &&
       puzzleString.split("").length === 81
     ) {
-      console.log("puzzleString is valid");
+      // console.log("puzzleString is valid");
       return true;
     } else {
       return false;
@@ -25,7 +25,7 @@ class SudokuSolver {
     let isRowValueFound;
     for (const [key, values] of Object.entries(ranksInPuzzle)) {
       if (key === row) {
-        console.log("row key values", key, ":", values);
+        // console.log("row key values", key, ":", values);
         // check if value is in row
         if (values.includes(value)) {
           //value is in row
@@ -37,7 +37,7 @@ class SudokuSolver {
         }
       }
     }
-    console.log("isRowValueFound", isRowValueFound);
+    // console.log("isRowValueFound", isRowValueFound);
     return isRowValueFound;
   }
 
@@ -53,7 +53,7 @@ class SudokuSolver {
       // console.log('key', key, 'column', column, "key===column", key===column);
       // console.log('values', values)
       if (key === column) {
-        console.log("column key values", key, ":", values);
+        // console.log("column key values", key, ":", values);
         // console.log('key', key, 'column', column);
         // console.log('values', values);
         // console.log('row index', (rows.indexOf(row)))
@@ -123,11 +123,11 @@ class SudokuSolver {
       if (gridCordinates[i].split(",").includes(coordinate)) {
         let detectedGridIndex = gridCordinates.indexOf(gridCordinates[i]);
         detectedGridQuarter = gridKeys[detectedGridIndex];
-        console.log(
-          "grid keys and values",
-          detectedGridQuarter,
-          gridsInPuzzle[detectedGridQuarter]
-        );
+        // console.log(
+        //   "grid keys and values",
+        //   detectedGridQuarter,
+        //   gridsInPuzzle[detectedGridQuarter]
+        // );
       }
     }
 
@@ -137,7 +137,7 @@ class SudokuSolver {
     let isQueryValueInGridValues = gridsInPuzzle[detectedGridQuarter].includes(
       value
     );
-    console.log("isQueryValueInGridValues", isQueryValueInGridValues);
+    // console.log("isQueryValueInGridValues", isQueryValueInGridValues);
 
     return isQueryValueInGridValues;
   }

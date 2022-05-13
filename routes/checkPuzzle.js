@@ -22,7 +22,7 @@ const checkPuzzle = (puzzle, row = "Z", column = 10, value = 10) => {
       column,
       value
     );
-    console.log("isValueAlreadyInRow", isValueAlreadyInRow);
+    // console.log("isValueAlreadyInRow", isValueAlreadyInRow);
     checks["checkRowPlacement"] = isValueAlreadyInRow;
 
     // check if value is in column
@@ -47,11 +47,11 @@ const checkPuzzle = (puzzle, row = "Z", column = 10, value = 10) => {
   } else {
     /**call function with puzzel only to recheck if puzzle is solved*/
     let isPuzzleSolved = solver.validate(puzzle);
-    console.log("isPuzzleSolved in checkPuzzle.js", isPuzzleSolved);
+    // console.log("isPuzzleSolved in checkPuzzle.js", isPuzzleSolved);
     checks["validate"] = isPuzzleSolved;
   }
 
-  console.log("checks in checkPuzzle.js", checks);
+  // console.log("checks in checkPuzzle.js", checks);
   return checks;
 };
 

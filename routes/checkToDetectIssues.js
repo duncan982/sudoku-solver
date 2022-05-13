@@ -2,7 +2,7 @@ const checkToDetectIssues = (checks) => {
   /** check to detect if there are issues with row, column, grid and puzzle */
   let response = {}; //an object to hold response
   let conflicts = []; //array to hold unsolved issues
-  console.log("checks", checks);
+  // console.log("checks", checks);
   for (const [key, value] of Object.entries(checks)) {
     /** iterates checks to detect issues if any */
     if (value === true) {
@@ -32,7 +32,7 @@ const checkToDetectIssues = (checks) => {
     response["conflict"] = []; // include list of conflicts into response as none
   }
 
-  console.log("response in checkToDetectIssues.js", response);
+  // console.log("response in checkToDetectIssues.js", response);
   return response;
 };
 

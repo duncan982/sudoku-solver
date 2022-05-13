@@ -15,7 +15,7 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
     row = value[0];
     column = value[1];
   }
-  console.log("row in request is", row, "and column in request is", column);
+  // console.log("row in request is", row, "and column in request is", column);
 
   // create a list of valid items
   let possiblePuzzelItems = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -45,13 +45,9 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
       let response = checkToDetectIssues(checks);
       //  console.log('response', response);
 
-      //  if(response.valid===true &&
-      //     response.conflict.includes("row")===false &&
-      //      response.conflict.includes("column")===false &&
-      //       response.conflict.includes("region")===false){
       if (response.valid === true) {
         // if there are no issues, let selectedpossiblePuzzelItems to be the possiblePuzzelItems at index [i]
-        console.log("there are no issues with value", value);
+        // console.log("there are no issues with value", value);
 
         // let rowsIndex = {A:1, B:2, C:3, D:4, E:5, F:6, G:7, H:8, I:9};
         let columnsIndex = {
@@ -78,7 +74,7 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
 
         // select respective row based on provided cordinate
         let selectedRow = splitedPuzzleValuesWithKeys[row];
-        console.log("selectedRow", selectedRow);
+        // console.log("selectedRow", selectedRow);
 
         // iterate selecteRow to obtain values
         let selectedRowValues = [];
@@ -94,10 +90,10 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
 
         // check if value is in selected row
         if (selectedRowValues.includes(`${value}`)) {
-          console.log("selectedRowValues includes value");
+          // console.log("selectedRowValues includes value");
           selectedRow = selectedRow;
         } else {
-          console.log("selectedRowValues does not include value");
+          // console.log("selectedRowValues does not include value");
           // check if value is in selected row // check if the row values are composed of 9 valid digits.
 
           selectedRow.forEach((cordinate) => {
@@ -105,7 +101,7 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
               // iterate cordinae key value pair
               if (values === ".") {
                 // check if value at the specified cordinate is empty
-                console.log("emptyCordinate is", values);
+                // console.log("emptyCordinate is", values);
                 emptyCordinates.push(cordinate);
                 // console.log('emptyCordinate is', emptyCordinate)
 
@@ -119,10 +115,10 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
           });
         }
 
-        console.log("emptyCordinates", emptyCordinates);
+        // console.log("emptyCordinates", emptyCordinates);
 
         let identifiedCordinate = emptyCordinates[0]; // select the first empty cordinate
-        console.log("identifiedCordinate before", identifiedCordinate);
+        // console.log("identifiedCordinate before", identifiedCordinate);
 
         // check for identified empty cordinates
         if (identifiedCordinate) {
@@ -135,9 +131,9 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
           }
         }
 
-        console.log("identifiedCordinate after", identifiedCordinate);
+        // console.log("identifiedCordinate after", identifiedCordinate);
 
-        console.log(selectedRow);
+        // console.log(selectedRow);
 
         // replace its previous row with the new updated row
         splitedPuzzleValuesWithKeys[row] = selectedRow;
@@ -162,7 +158,7 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
         //     solvedPuzzle=puzzleValuesWithKeys;
         // }
         let cordinate = selectedRow[valueIndex]; // select object with the respective cordinate
-        console.log("cordinate", cordinate);
+        // console.log("cordinate", cordinate);
 
         //  }
       } else {
@@ -180,10 +176,10 @@ const solveCordinate = (puzzleValuesWithKeys, obtainedCoordinate) => {
   }
   // console.log('solvedPuzzle in solvecoordinate.js:', solvedPuzzle)
   regeneratedPuzzle = regeneratePuzzle(solvedPuzzle);
-  console.log(
-    "regeneratedPuzzle to return in solvecoordinate.js:",
-    regeneratedPuzzle
-  );
+  // console.log(
+  //   "regeneratedPuzzle to return in solvecoordinate.js:",
+  //   regeneratedPuzzle
+  // );
 
   return regeneratedPuzzle;
 };
